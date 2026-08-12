@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="p-32" default="default" basedir=".">
-    <description>Builds, tests, and runs the project p-32.</description>
+<project name="select_using_servlet" default="default" basedir=".">
+    <description>Builds, tests, and runs the project select_using_servlet.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
