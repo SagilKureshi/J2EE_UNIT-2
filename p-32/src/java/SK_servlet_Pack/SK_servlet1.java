@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package p_32;
+package SK_servlet_Pack;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author DELL
+ * @author COMP120
  */
-public class servlet_2 extends HttpServlet {
+public class SK_servlet1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,9 +32,10 @@ public class servlet_2 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("Welcome to Servlet 2");
             String name = request.getParameter("name");
-            out.println("<br>Your name is "+name);
+            out.println("Welcome to 1st servlet<br>");
+            out.println("<a href='SK_servlet2'>Click here to open 2nd servlet</a>");
+                   
         }
     }
 
