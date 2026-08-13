@@ -34,7 +34,7 @@ public class SK_servlet1 extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             String name = request.getParameter("name");
             out.println("Welcome to 1st servlet<br>");
-            out.println("<a href='SK_servlet2'>Click here to open 2nd servlet</a>");
+            out.println("<a href='SK_servlet2?name="+name+"'>Click here to open 2nd servlet</a>");
                    
         }
     }
