@@ -33,10 +33,10 @@ public class Servlet_1 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String name = request.getParameter("name");
-            out.println("Create Cookie in Servlet 1");
             Cookie c_obj = new Cookie("Cookie1",name);
             c_obj.setMaxAge(15);
             response.addCookie(c_obj);
+            out.println("Cookie created in Servlet 1");
             out.println("<br><a href='Servlet_2'>Click Here to move on Sevlet_2</a>");
         }
     }
