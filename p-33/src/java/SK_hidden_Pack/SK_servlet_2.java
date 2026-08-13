@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author DELL
  */
-public class SK_hidden_servlet extends HttpServlet {
+public class SK_servlet_2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,6 +32,7 @@ public class SK_hidden_servlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
            String password = request.getParameter("SK_hidden");
+           out.println("Servlet 2<br> Password :- ");
            out.println(password);
         }
     }
