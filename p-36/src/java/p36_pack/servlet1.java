@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package SK_Cookie_Pack;
-z
+package p36_pack;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,12 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Cookie;
 
-
 /**
  *
- * @author COMP120
+ * @author DELL
  */
-public class SK_servlet1 extends HttpServlet {
+public class servlet1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,16 +33,41 @@ public class SK_servlet1 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String username = request.getParameter("username");
-            Cookie c_obj = new Cookie("Cookie1",username);
-            c_obj.setMaxAge(60*60*24);
-            response.addCookie(c_obj);
-            out.println("Cookie created in Servlet 1");
-            out.println("<br><a href='Servlet_2'>Click Here to move on Sevlet_2</a>");
+            Cookie[] cookies = request.getCookies();
+
+            //This checks whether any cookie exists for specifically name = "visited".
+            
+//            boolean found = false;
+//
+//            if (cookies != null) {
+//                for (Cookie c : cookies) {
+//                    if (c.getName().equals("visited")) {
+//                        found = true;
+//                        break;
+//                    }
+//            }
+//        }
+//
+//        if (found) {
+//            out.println("<h2>Welcome Back</h2>");
+//        } else {
+//            out.println("<h2>Welcome</h2>");
+//            Cookie c = new Cookie("visited", "yes");
+//            response.addCookie(c);
+//        }
+            //This checks whether any cookie exists, not specifically whether our "visited" cookie exists.
+            if (cookies == null) {
+                out.println("<h2>Welcome</h2>");
+
+                Cookie c = new Cookie("visited", "yes");
+                response.addCookie(c);
+            } else {
+                out.println("<h2>Welcome Back</h2>");
+            }
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
