@@ -33,8 +33,13 @@ public class Servlet_2 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             Cookie []ck_obj = request.getCookies();
-            out.println("Cookie Name : " + ck_obj[0].getName());
-            out.println("<br>Cookie Value : " + ck_obj[0].getValue());            
+            if(Cookie != null){
+                out.println("Cookie Name : " + ck_obj[0].getName());
+                out.println("<br>Cookie Value : " + ck_obj[0].getValue());                
+            }
+            else{
+                out.println("Apologize , The Cookie is not found");
+            }
         }
     }
 

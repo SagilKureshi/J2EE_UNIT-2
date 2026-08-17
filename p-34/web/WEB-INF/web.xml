@@ -4,9 +4,17 @@
         <servlet-name>SK_servlet1</servlet-name>
         <servlet-class>SK_Cookie_Pack.SK_servlet1</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>servlet2</servlet-name>
+        <servlet-class>SK_Cookie_Pack.servlet2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SK_servlet1</servlet-name>
         <url-pattern>/SK_servlet1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servlet2</servlet-name>
+        <url-pattern>/servlet2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

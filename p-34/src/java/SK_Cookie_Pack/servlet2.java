@@ -8,17 +8,16 @@ package SK_Cookie_Pack;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Cookie;
-
 
 /**
  *
- * @author COMP120
+ * @author KSC64
  */
-public class SK_servlet1 extends HttpServlet {
+public class servlet2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,13 +32,15 @@ public class SK_servlet1 extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            String username = request.getParameter("username");
-            Cookie c_obj = new Cookie("Cookie1",username);
-            c_obj.setMaxAge(60*60*24);
-            response.addCookie(c_obj);
-            out.println("Cookie created in Servlet 1");
-            out.println("<br><a href='servlet2'>Click Here to Print Cookie</a>");
+            Cookie[] ck_obj = request.getCookies();
+            
+            if (ck_obj == null) {
+                out.println("Apologize , The Cookie is not found");
+                out.println("<a href='index.html'>Click to Create Cookie</a>");
+            } else {
+                out.println("Cookie Name : " + ck_obj[0].getName());
+                out.println("<br>Cookie Value : " + ck_obj[0].getValue());
+            }
         }
     }
 
