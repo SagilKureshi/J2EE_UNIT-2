@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package p_40_Pack;
+package P_40_Pack;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author DELL
  */
-public class Auth extends HttpServlet {
+public class login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,17 +33,9 @@ public class Auth extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String userName = request.getParameter("userName");
-            String password = request.getParameter("password");
-            if(userName.equals("sagil")&&password.equals("pass")){
-                out.println("match");
-                HttpSession session=request.getSession(); // Get or create session
-                session.setAttribute("s_nm",request.getParameter("userName")); // Store user data
-                response.sendRedirect("login");
-            }
-            else{
-                out.println("unmatch");
-            }
+            HttpSession session = request.getSession();
+            out.println("Username : "+session.getAttribute("sName"));
+            out.println("<a href='logout'>logout</a>");
         }
     }
 
