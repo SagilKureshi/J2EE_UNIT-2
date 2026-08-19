@@ -35,6 +35,7 @@ public class logout extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession();
             session.invalidate();
+            response.sendRedirect("index.html");
         }
     }
 

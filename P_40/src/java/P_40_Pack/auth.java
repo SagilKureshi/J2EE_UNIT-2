@@ -42,7 +42,7 @@ public class auth extends HttpServlet {
                 RequestDispatcher rs = request.getRequestDispatcher("login");
                 rs.forward(request, response);
             }else{
-                out.println("error");
+                response.sendRedirect("error.html");
             }
         }
     }
