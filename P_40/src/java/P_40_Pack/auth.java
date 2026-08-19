@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package p_40_Pack;
+package P_40_Pack;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author DELL
  */
-public class login extends HttpServlet {
+public class auth extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,12 +34,15 @@ public class login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            HttpSession session = request.getSession();
-            if (session == null) {
-                response.sendRedirect("index.html");
-            } else {
-                out.println("session is : " + session.getAttribute("s_nm"));
-                out.print("<a href='logout'>click here to logout</a>");
+            String userName = request.getParameter("userName");
+            String password = request.getParameter("password");
+            if(userName.equals("sagil") && password.equals("pass")){
+                HttpSession session = request.getSession();
+                session.setAttribute("sName", userName);
+                RequestDispatcher rs = request.getRequestDispatcher("login");
+                rs.forward(request, response);
+            }else{
+                out.println("error");
             }
         }
     }
