@@ -1,20 +1,17 @@
 <%-- 
-    Document   : error
-    Created on : 25 Aug, 2026, 11:35:37 AM
+    Document   : display
+    Created on : 27 Aug, 2026, 11:46:03 AM
     Author     : KSC64
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page isErrorPage="True"%>
-<%@include file="index.html" %>
-<%--<jsp:include page="i    ndex.html"></jsp:include>--%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body> 
-        <%out.println(exception);%>
+    <body>
+        <h1>Hello Admin!</h1>
     </body>
 </html>

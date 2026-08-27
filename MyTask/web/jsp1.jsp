@@ -1,20 +1,18 @@
 <%-- 
-    Document   : error
-    Created on : 25 Aug, 2026, 11:35:37 AM
+    Document   : jsp1
+    Created on : 27 Aug, 2026, 12:06:44 PM
     Author     : KSC64
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page isErrorPage="True"%>
-<%@include file="index.html" %>
-<%--<jsp:include page="i    ndex.html"></jsp:include>--%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body> 
-        <%out.println(exception);%>
+    <body>
+        <h1>Hello World! from JSP-1</h1>
+        <jsp:forward page="jsp2.jsp" ></jsp:forward>
     </body>
 </html>
